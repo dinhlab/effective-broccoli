@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 export default function AddNewTask (props) {
   const { tasks, setTasks } = props
-  const [newTask, setNewTask] = useState('Add new task')
+  const [newTask, setNewTask] = useState('')
   const handleSubmit = (e) => {
     e.preventDefault()
     if (newTask) {
@@ -22,6 +22,7 @@ export default function AddNewTask (props) {
     <form onSubmit={handleSubmit} className='form'>
       <label htmlFor='newitem'>Add to the todo list</label>
       <input
+        placeholder='Add new task'
         type='text'
         id='newitem'
         value={newTask}
